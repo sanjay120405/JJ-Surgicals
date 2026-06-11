@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | JJ Surgicals & Health Care - Madurai</title>
+  <meta name="description" content="Contact JJ Surgicals & Health Care in Madurai. Call 82481 68600 or email us for medical surgical equipment enquiries and quotes.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="icon" type="image/jpeg" href="images/image1.jpeg">
+  <style>
+    /* Quick contact cards */
+    .quick-contact-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+    .quick-contact-card {
+      background:var(--white); border-radius:var(--radius-lg); border:1px solid var(--border);
+      padding:28px 20px; text-align:center; transition:var(--transition);
+    }
+    .quick-contact-card:hover { transform:translateY(-4px); box-shadow:var(--shadow-lg); border-color:var(--primary); }
+    .qc-icon {
+      width:56px; height:56px; border-radius:50%; margin:0 auto 14px;
+      display:flex; align-items:center; justify-content:center; font-size:1.3rem;
+    }
+    .qc-icon.blue { background:var(--light); color:var(--primary); }
+    .qc-icon.red { background:#fff0f0; color:var(--red); }
+    .qc-icon.gold { background:#fffbeb; color:#d97706; }
+    .quick-contact-card h3 { font-size:1rem; font-weight:700; color:var(--dark); margin-bottom:5px; }
+    .quick-contact-card p  { font-size:0.85rem; color:var(--gray); margin-bottom:10px; }
+    .quick-contact-card a  { color:var(--primary); font-weight:600; font-size:0.92rem; }
+
+    /* Main contact grid */
+    .contact-main-grid {
+      display:grid; grid-template-columns:400px 1fr; gap:40px; align-items:stretch;
+    }
+
+    /* Left panel */
+    .contact-left { display:flex; flex-direction:column; gap:24px; }
+
+    .contact-details-box {
+      background:var(--white); border:1px solid var(--border);
+      border-radius:var(--radius-lg); padding:32px; box-shadow:var(--shadow); flex:1;
+    }
+    .contact-details-box .box-heading {
+      font-size:1.2rem; font-weight:800; color:var(--dark); margin-bottom:22px;
+      display:flex; align-items:center; gap:10px;
+    }
+    .contact-details-box .box-heading i { color:var(--primary); font-size:1rem; }
+
+    .contact-detail-row {
+      display:flex; align-items:flex-start; gap:14px;
+      padding:13px 0; border-bottom:1px solid var(--border);
+    }
+    .contact-detail-row:last-child { border-bottom:none; padding-bottom:0; }
+    .cd-icon {
+      width:38px; height:38px; min-width:38px; border-radius:10px;
+      background:var(--light); color:var(--primary);
+      display:flex; align-items:center; justify-content:center; font-size:0.88rem;
+    }
+    .cd-text h4 { font-size:0.73rem; font-weight:700; color:var(--gray); text-transform:uppercase; letter-spacing:.06em; margin-bottom:3px; }
+    .cd-text p, .cd-text a { font-size:0.9rem; color:var(--dark); line-height:1.55; }
+    .cd-text a:hover { color:var(--primary); }
+
+    .business-card-box {
+      border-radius:var(--radius-lg); overflow:hidden;
+      box-shadow:var(--shadow-lg); border:1px solid var(--border);
+    }
+    .business-card-box img { width:100%; display:block; }
+
+    /* Right panel — map */
+    .contact-map-panel {
+      border-radius:var(--radius-lg); overflow:hidden;
+      box-shadow:var(--shadow-lg); border:1px solid var(--border);
+      display:flex; flex-direction:column; min-height:540px;
+    }
+    .map-header {
+      background:var(--primary); color:var(--white);
+      padding:15px 22px; display:flex; align-items:center; gap:10px; flex-shrink:0;
+    }
+    .map-header i { font-size:1rem; }
+    .map-header .map-title { font-size:0.95rem; font-weight:600; }
+    .map-header a {
+      margin-left:auto; color:var(--white); font-size:0.8rem;
+      background:rgba(255,255,255,.2); padding:5px 14px; border-radius:20px;
+      white-space:nowrap; transition:var(--transition);
+    }
+    .map-header a:hover { background:rgba(255,255,255,.35); }
+    .contact-map-panel iframe { width:100%; flex:1; border:0; display:block; min-height:490px; }
+
+    @media(max-width:1024px){
+      .contact-main-grid { grid-template-columns:1fr; }
+      .contact-map-panel { min-height:auto; }
+      .contact-map-panel iframe { min-height:380px; }
+    }
+    @media(max-width:768px){
+      .quick-contact-grid { grid-template-columns:1fr; }
+    }
+  </style>
+</head>
+<body class="page-load">
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <img src="images/image1.jpeg" alt="JJ Surgicals Logo" class="logo-img">
+        <div class="logo-text">
+          <span class="logo-name">JJ Surgicals &amp; Health Care</span>
+        </div>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="products.html" class="nav-link">Products</a></li>
+        <li><a href="about.html" class="nav-link">About Us</a></li>
+        <li><a href="contact.html" class="nav-link active">Contact</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="contact.html" class="btn-primary">Get Quote</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU OVERLAY -->
+  <div class="mobile-menu" id="mobileMenu">
+    <nav class="mm-links">
+      <a href="index.html" class="mm-link">Home</a>
+      <a href="products.html" class="mm-link">Products</a>
+      <a href="about.html" class="mm-link">About Us</a>
+      <a href="contact.html" class="mm-link active">Contact</a>
+    </nav>
+    <div class="mm-actions">
+      <a href="contact.html" class="mm-btn-primary">Request a Quote</a>
+      <a href="tel:8248168600" class="mm-btn-call">Call Us Now</a>
+    </div>
+    <div class="mm-contact">
+      <p>Reach us directly</p>
+      <div class="mm-contact-row"><i class="fas fa-phone"></i> 82481 68600</div>
+      <div class="mm-contact-row"><i class="fas fa-envelope"></i> jjenterprisespvtltd@gmail.com</div>
+    </div>
+  </div>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <i class="fas fa-chevron-right"></i>
+      <span>Contact Us</span>
+    </div>
+    <h1>Get in Touch</h1>
+    <p>We're here to help. Reach out for product enquiries, bulk orders, or any assistance you need.</p>
+  </div>
+
+  <!-- QUICK CONTACT CARDS -->
+  <section class="section-pad bg-light">
+    <div class="container">
+      <div class="quick-contact-grid">
+        <div class="quick-contact-card fade-in delay-1">
+          <div class="qc-icon blue"><i class="fas fa-phone"></i></div>
+          <h3>Call Us</h3>
+          <p>Mon–Sat, 9 AM – 7 PM</p>
+          <a href="tel:8248168600">82481 68600</a>
+        </div>
+        <div class="quick-contact-card fade-in delay-2">
+          <div class="qc-icon red"><i class="fas fa-envelope"></i></div>
+          <h3>Email Us</h3>
+          <p>We reply within 24 hours</p>
+          <a href="mailto:jjenterprisespvtltd@gmail.com" style="font-size:0.82rem;">jjenterprisespvtltd@gmail.com</a>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN CONTACT SECTION -->
+  <section class="section-pad">
+    <div class="container">
+      <div class="contact-main-grid">
+
+        <!-- LEFT: Contact details + business card -->
+        <div class="contact-left fade-in-left">
+
+          <div class="contact-details-box">
+            <div class="box-heading">
+              <i class="fas fa-address-card"></i> Contact Information
+            </div>
+
+            <div class="contact-detail-row">
+              <div class="cd-icon"><i class="fas fa-user-tie"></i></div>
+              <div class="cd-text">
+                <h4>Proprietor</h4>
+                <p>R. Sam Asir, M.Sc., M.B.A.</p>
+              </div>
+            </div>
+
+            <div class="contact-detail-row">
+              <div class="cd-icon"><i class="fas fa-phone"></i></div>
+              <div class="cd-text">
+                <h4>Phone</h4>
+                <a href="tel:8248168600">82481 68600</a>
+              </div>
+            </div>
+
+            <div class="contact-detail-row">
+              <div class="cd-icon"><i class="fas fa-envelope"></i></div>
+              <div class="cd-text">
+                <h4>Email</h4>
+                <a href="mailto:jjenterprisespvtltd@gmail.com">jjenterprisespvtltd@gmail.com</a>
+              </div>
+            </div>
+
+            <div class="contact-detail-row">
+              <div class="cd-icon"><i class="fas fa-map-marker-alt"></i></div>
+              <div class="cd-text">
+                <h4>Address</h4>
+                <p>Bhavani Nathi Street, Bama Nagar,<br>Mahatma Gandhi Nagar,<br>Madurai, Tamil Nadu 625017</p>
+              </div>
+            </div>
+
+            <div class="contact-detail-row">
+              <div class="cd-icon"><i class="fas fa-clock"></i></div>
+              <div class="cd-text">
+                <h4>Business Hours</h4>
+                <p>Monday – Saturday: 9 AM – 7 PM<br>Sunday: Closed</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Business Card Image -->
+          <div class="business-card-box">
+            <img src="images/card.png" alt="JJ Surgicals Business Card">
+          </div>
+
+        </div>
+
+        <!-- RIGHT: Google Maps -->
+        <div class="fade-in-right">
+          <div class="contact-map-panel">
+            <div class="map-header">
+              <i class="fas fa-map-marked-alt"></i>
+              <span class="map-title">JJ Surgicals &amp; Health Care — Madurai</span>
+              <a href="https://www.google.com/maps/place/JJ+SURGICALS+AND+HEALTH+CARE/@9.9732387,78.0784221,14z" target="_blank" rel="noopener">
+                <i class="fas fa-external-link-alt"></i> Open Maps
+              </a>
+            </div>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3930.5480837185855!2d78.11388097469782!3d9.973238690115944!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b00c7e82c6b32d5%3A0xcd1236c03e79e682!2sJJ%20SURGICALS%20AND%20HEALTH%20CARE!5e0!3m2!1sen!2sin!4v1718000000000!5m2!1sen!2sin"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="JJ Surgicals And Health Care - Madurai Location">
+            </iframe>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-content">
+        <h2>Ready to Place Your Order?</h2>
+        <p>Contact us now and let our experts guide you to the right medical equipment for your needs.</p>
+        <div class="cta-btns">
+          <a href="tel:8248168600" class="btn-white"><i class="fas fa-phone"></i> Call: 82481 68600</a>
+          <a href="products.html" class="btn-outline-white"><i class="fas fa-box-open"></i> Browse Products</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <img src="images/image1.jpeg" alt="JJ Surgicals">
+            <div><span class="footer-name">JJ Surgicals</span><span class="footer-tagline">&amp; Health Care</span></div>
+          </div>
+          <p>Your trusted partner for medical surgical supplies and healthcare equipment in Madurai, Tamil Nadu.</p>
+          <p class="footer-motto">"Healthcare Built on Trust"</p>
+          <p>GSTIN: 33FYBPS2023F1ZS</p>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-products">
+          <h4>Product Categories</h4>
+          <ul>
+            <li><a href="products.html#nursing-bags">Nursing Bags &amp; Kits</a></li>
+            <li><a href="products.html#cpr-models">CPR Training Models</a></li>
+            <li><a href="products.html#anatomical-models">Anatomical Models</a></li>
+            <li><a href="products.html#diagnostic">Diagnostic Equipment</a></li>
+            <li><a href="products.html#furniture">Hospital Furniture</a></li>
+            <li><a href="products.html#mobility">Mobility &amp; Rehab Aids</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4>Contact Info</h4>
+          <div class="footer-contact-item"><i class="fas fa-user-tie"></i><span>R. Sam Asir, M.Sc., M.B.A.<br>Proprietor</span></div>
+          <div class="footer-contact-item"><i class="fas fa-phone"></i><a href="tel:8248168600">82481 68600</a></div>
+          <div class="footer-contact-item"><i class="fas fa-envelope"></i><a href="mailto:jjenterprisespvtltd@gmail.com">jjenterprisespvtltd@gmail.com</a></div>
+          <div class="footer-contact-item"><i class="fas fa-map-marker-alt"></i><span>Bhavani Nathi Street, Bama Nagar, Mahatma Gandhi Nagar, Madurai, Tamil Nadu 625017</span></div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 JJ Surgicals &amp; Health Care. All Rights Reserved. | Madurai, Tamil Nadu</p>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
+  <script src="script.js"></script>
+</body>
+</html>
