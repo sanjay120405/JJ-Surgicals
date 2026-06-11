@@ -11,8 +11,47 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   <link rel="icon" type="image/jpeg" href="images/image1.jpeg">
   <style>
-    .mobile-cat-select { display:none; width:100%; padding:12px 16px; border-radius:8px; border:1.5px solid var(--border); font-size:0.95rem; font-family:inherit; color:var(--dark); background:var(--white); margin-bottom:24px; }
-    @media(max-width:1024px){ .mobile-cat-select { display:block; } }
+    /* Products page hero — teal */
+    .page-hero { background: linear-gradient(135deg, #0a6e72 0%, #0d9488 100%); }
+    .breadcrumb span { color: #fb923c; font-weight: 700; }
+
+    /* Hide old select */
+    .mobile-cat-select { display: none !important; }
+
+    /* Horizontal pill filter bar */
+    .cat-filter-bar {
+      display: none;
+      overflow-x: auto; white-space: nowrap;
+      padding: 12px 16px; gap: 8px;
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      position: sticky; top: 82px; z-index: 100;
+      scrollbar-width: none; -webkit-overflow-scrolling: touch;
+    }
+    .cat-filter-bar::-webkit-scrollbar { display: none; }
+    .cat-pill {
+      display: inline-block; padding: 8px 18px;
+      border-radius: 24px; border: 1.5px solid var(--border);
+      font-size: 0.83rem; font-weight: 600; color: var(--dark);
+      cursor: pointer; transition: all 0.2s ease; text-decoration: none;
+      flex-shrink: 0;
+    }
+    .cat-pill:hover { border-color: var(--primary); color: var(--primary); }
+    .cat-pill.active { background: var(--primary); color: #fff; border-color: var(--primary); }
+
+    /* Count badge on category headers */
+    .cat-count-badge {
+      display: inline-flex; align-items: center;
+      background: var(--light); color: var(--primary);
+      font-size: 0.78rem; font-weight: 700;
+      padding: 4px 12px; border-radius: 20px;
+      border: 1px solid var(--border); margin-left: auto; flex-shrink: 0;
+    }
+
+    @media(max-width: 1024px) {
+      .cat-filter-bar { display: flex; }
+      .products-layout { padding-top: 0; }
+    }
   </style>
 </head>
 <body class="page-load">
@@ -67,8 +106,24 @@
       <i class="fas fa-chevron-right"></i>
       <span>Products</span>
     </div>
-    <h1>Our Product Catalogue</h1>
-    <p>200+ quality medical and surgical products for nursing education, hospitals, and healthcare institutions</p>
+    <h1>Our Products</h1>
+    <p>Browse our complete range of medical &amp; surgical equipment</p>
+  </div>
+
+  <!-- MOBILE CATEGORY FILTER BAR -->
+  <div class="cat-filter-bar" id="catFilterBar">
+    <a href="#nursing-bags" class="cat-pill active">Nursing Bags</a>
+    <a href="#cpr-models" class="cat-pill">CPR Models</a>
+    <a href="#anatomical-models" class="cat-pill">Anatomical Models</a>
+    <a href="#nursing-simulators" class="cat-pill">Nursing Simulators</a>
+    <a href="#surgical-instruments" class="cat-pill">Surgical Instruments</a>
+    <a href="#ss-wares" class="cat-pill">SS Wares</a>
+    <a href="#diagnostic" class="cat-pill">Diagnostic</a>
+    <a href="#patient-care" class="cat-pill">Patient Care</a>
+    <a href="#uniforms" class="cat-pill">Uniforms</a>
+    <a href="#furniture" class="cat-pill">Hospital Furniture</a>
+    <a href="#mobility" class="cat-pill">Mobility Aids</a>
+    <a href="#consumables" class="cat-pill">Consumables</a>
   </div>
 
   <!-- PRODUCTS LAYOUT -->
@@ -94,22 +149,6 @@
 
     <!-- MAIN CONTENT -->
     <main>
-      <!-- Mobile category selector -->
-      <select class="mobile-cat-select" onchange="window.location.hash=this.value">
-        <option value="">Product Categories</option>
-        <option value="#nursing-bags">1. Nursing Bags &amp; Student Kits</option>
-        <option value="#cpr-models">2. CPR &amp; Emergency Training</option>
-        <option value="#anatomical-models">3. Anatomical Models &amp; Torsos</option>
-        <option value="#nursing-simulators">4. Nursing Training Simulators</option>
-        <option value="#surgical-instruments">5. Surgical Instruments</option>
-        <option value="#ss-wares">6. Hospital SS Wares</option>
-        <option value="#diagnostic">7. Diagnostic Equipment</option>
-        <option value="#patient-care">8. Patient Care Products</option>
-        <option value="#uniforms">9. Hospital Uniforms &amp; OT Wear</option>
-        <option value="#furniture">10. Hospital Furniture</option>
-        <option value="#mobility">11. Mobility &amp; Rehabilitation Aids</option>
-        <option value="#consumables">12. Medical Consumables &amp; Disposables</option>
-      </select>
 
       <!-- ===== CATEGORY 1: NURSING BAGS ===== -->
       <div class="product-category" id="nursing-bags">
@@ -119,6 +158,7 @@
             <h2>Nursing Bags &amp; Student Kits</h2>
             <p style="color:var(--gray);font-size:0.85rem;margin-top:4px;">Complete kits designed for nursing students as per INC guidelines</p>
           </div>
+          <span class="cat-count-badge">4 Products</span>
         </div>
         <div class="product-grid">
           <div class="product-card">
@@ -148,6 +188,7 @@
             <h2>CPR &amp; Emergency Training Models</h2>
             <p style="color:var(--gray);font-size:0.85rem;margin-top:4px;">High-fidelity manikins for CPR and emergency skills training</p>
           </div>
+          <span class="cat-count-badge">4 Products</span>
         </div>
         <div class="product-grid">
           <div class="product-card">
@@ -177,6 +218,7 @@
             <h2>Anatomical Models &amp; Torsos</h2>
             <p style="color:var(--gray);font-size:0.85rem;margin-top:4px;">Detailed anatomical models for medical and nursing education</p>
           </div>
+          <span class="cat-count-badge">22 Products</span>
         </div>
         <div class="product-grid">
           <div class="product-card">
@@ -286,6 +328,7 @@
             <h2>Nursing Training Simulators</h2>
             <p style="color:var(--gray);font-size:0.85rem;margin-top:4px;">Advanced simulators for clinical skills and hands-on training</p>
           </div>
+          <span class="cat-count-badge">12 Products</span>
         </div>
         <div class="product-grid">
           <div class="product-card">
@@ -347,6 +390,7 @@
             <h2>Surgical Instruments</h2>
             <p style="color:var(--gray);font-size:0.85rem;margin-top:4px;">Professional-grade surgical and examination instruments</p>
           </div>
+          <span class="cat-count-badge">5 Products</span>
         </div>
         <div class="product-grid">
           <div class="product-card">
@@ -380,6 +424,7 @@
             <h2>Hospital Stainless Steel Wares</h2>
             <p style="color:var(--gray);font-size:0.85rem;margin-top:4px;">Premium quality SS hospital wares in all standard sizes</p>
           </div>
+          <span class="cat-count-badge">6 Products</span>
         </div>
         <div class="product-grid">
           <div class="product-card">
@@ -417,6 +462,7 @@
             <h2>Diagnostic Equipment</h2>
             <p style="color:var(--gray);font-size:0.85rem;margin-top:4px;">Precision diagnostic instruments for clinical assessment</p>
           </div>
+          <span class="cat-count-badge">16 Products</span>
         </div>
         <div class="product-grid">
           <div class="product-card">
@@ -502,6 +548,7 @@
             <h2>Patient Care Products</h2>
             <p style="color:var(--gray);font-size:0.85rem;margin-top:4px;">Essential products for patient comfort and clinical care</p>
           </div>
+          <span class="cat-count-badge">18 Products</span>
         </div>
         <div class="product-grid">
           <div class="product-card">
@@ -592,6 +639,7 @@
             <h2>Hospital Uniforms &amp; OT Wear</h2>
             <p style="color:var(--gray);font-size:0.85rem;margin-top:4px;">Professional healthcare uniforms for all clinical settings</p>
           </div>
+          <span class="cat-count-badge">9 Products</span>
         </div>
         <div class="product-grid">
           <div class="product-card">
@@ -649,6 +697,7 @@
             <h2>Hospital Furniture</h2>
             <p style="color:var(--gray);font-size:0.85rem;margin-top:4px;">Durable and functional hospital furniture for all departments</p>
           </div>
+          <span class="cat-count-badge">15 Products</span>
         </div>
         <div class="product-grid">
           <div class="product-card">
@@ -728,6 +777,7 @@
             <h2>Mobility &amp; Rehabilitation Aids</h2>
             <p style="color:var(--gray);font-size:0.85rem;margin-top:4px;">Quality mobility aids for patient rehabilitation and comfort</p>
           </div>
+          <span class="cat-count-badge">8 Products</span>
         </div>
         <div class="product-grid">
           <div class="product-card">
@@ -773,6 +823,7 @@
             <h2>Medical Consumables &amp; Disposables</h2>
             <p style="color:var(--gray);font-size:0.85rem;margin-top:4px;">High-quality disposable medical supplies for clinical use</p>
           </div>
+          <span class="cat-count-badge">12 Products</span>
         </div>
         <div class="product-grid">
           <div class="product-card">
@@ -903,5 +954,26 @@
 
   <button class="back-to-top" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
   <script src="script.js"></script>
+  <script>
+    // Update active pill as user scrolls
+    const pills = document.querySelectorAll('.cat-pill');
+    const sections = ['nursing-bags','cpr-models','anatomical-models','nursing-simulators','surgical-instruments','ss-wares','diagnostic','patient-care','uniforms','furniture','mobility','consumables'];
+    function updateActivePill() {
+      let current = sections[0];
+      sections.forEach(id => {
+        const el = document.getElementById(id);
+        if (el && window.scrollY >= el.offsetTop - 160) current = id;
+      });
+      pills.forEach(p => {
+        const isActive = p.getAttribute('href') === '#' + current;
+        p.classList.toggle('active', isActive);
+        if (isActive) {
+          const bar = document.getElementById('catFilterBar');
+          if (bar) bar.scrollLeft = p.offsetLeft - bar.offsetWidth / 2 + p.offsetWidth / 2;
+        }
+      });
+    }
+    window.addEventListener('scroll', updateActivePill, { passive: true });
+  </script>
 </body>
 </html>
