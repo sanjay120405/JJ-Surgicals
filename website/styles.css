@@ -722,7 +722,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   .nav-container { position: relative; justify-content: center; padding: 0 56px; }
   .logo-img { width: 53px; height: 53px; }
   .nav-logo { gap: 8px; }
-  .logo-name { font-size: 1.3rem; }
+  .logo-name { font-size: 1.1rem; }
   /* Hero responsive */
   .hero-layout { grid-template-columns: 1fr; gap: 32px; padding: 40px 20px 52px; }
   .hero-img-side { order: -1; }
