@@ -352,8 +352,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   display: flex; align-items: center; justify-content: center;
   margin: 0 auto 16px; font-size: 1.5rem; color: #FFC72C;
 }
-.trust-card h3 { color: var(--white); font-size: 1rem; font-weight: 700; margin-bottom: 10px; }
-.trust-card p { color: rgba(255,255,255,0.65); font-size: 0.88rem; line-height: 1.6; }
+.trust-card h3 { color: #fff; font-size: 1rem; font-weight: 700; margin-bottom: 10px; }
+.trust-card p { color: rgba(255,255,255,0.95); font-size: 0.88rem; line-height: 1.6; }
 
 /* ===== CTA SECTION ===== */
 .cta-section {
