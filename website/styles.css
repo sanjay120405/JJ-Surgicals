@@ -375,36 +375,36 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 .footer-logo img { width: 52px; height: 52px; border-radius: 50%; object-fit: cover; }
 .footer-name { display: block; color: var(--white); font-size: 1rem; font-weight: 800; }
-.footer-tagline { display: block; color: rgba(255,255,255,0.5); font-size: 0.72rem; }
-.footer-brand p { color: rgba(255,255,255,0.55); font-size: 0.88rem; line-height: 1.7; margin-bottom: 8px; }
+.footer-tagline { display: block; color: rgba(255,255,255,0.85); font-size: 0.72rem; }
+.footer-brand p { color: rgba(255,255,255,0.9); font-size: 0.88rem; line-height: 1.7; margin-bottom: 8px; }
 .footer-motto { color: #FFC72C !important; font-style: italic; font-weight: 600 !important; }
 
 .footer-links h4, .footer-products h4, .footer-contact h4 {
   color: var(--white); font-size: 0.9rem; font-weight: 700;
   margin-bottom: 20px; padding-bottom: 10px;
-  border-bottom: 2px solid rgba(255,255,255,0.1);
+  border-bottom: 2px solid rgba(255,255,255,0.3);
 }
 .footer-links ul, .footer-products ul { display: flex; flex-direction: column; gap: 10px; }
 .footer-links a, .footer-products a {
-  color: rgba(255,255,255,0.55); font-size: 0.85rem; transition: var(--transition);
+  color: rgba(255,255,255,0.9); font-size: 0.85rem; transition: var(--transition);
 }
 .footer-links a:hover, .footer-products a:hover { color: var(--white); padding-left: 4px; }
 
 .footer-contact-item {
   display: flex; gap: 12px; margin-bottom: 14px; align-items: flex-start;
 }
-.footer-contact-item i { color: var(--red); margin-top: 3px; flex-shrink: 0; font-size: 0.9rem; }
+.footer-contact-item i { color: #FFC72C; margin-top: 3px; flex-shrink: 0; font-size: 0.9rem; }
 .footer-contact-item span, .footer-contact-item a {
-  color: rgba(255,255,255,0.55); font-size: 0.85rem; line-height: 1.5;
+  color: rgba(255,255,255,0.95); font-size: 0.85rem; line-height: 1.5;
   transition: var(--transition);
 }
 .footer-contact-item a:hover { color: var(--white); }
 
 .footer-bottom {
-  border-top: 1px solid rgba(255,255,255,0.08);
+  border-top: 1px solid rgba(255,255,255,0.2);
   padding: 20px 0; text-align: center;
 }
-.footer-bottom p { color: rgba(255,255,255,0.35); font-size: 0.82rem; }
+.footer-bottom p { color: rgba(255,255,255,0.85); font-size: 0.82rem; }
 
 /* ===== PRODUCTS PAGE ===== */
 .page-hero {
