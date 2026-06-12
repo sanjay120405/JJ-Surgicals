@@ -432,7 +432,14 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   border: 1px solid var(--border); padding: 24px;
   position: sticky; top: 90px;
   box-shadow: var(--shadow);
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
 }
+.products-sidebar::-webkit-scrollbar { width: 4px; }
+.products-sidebar::-webkit-scrollbar-track { background: transparent; }
+.products-sidebar::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
 .sidebar-title {
   font-size: 0.8rem; font-weight: 700; color: var(--gray);
   letter-spacing: 1.5px; text-transform: uppercase;
