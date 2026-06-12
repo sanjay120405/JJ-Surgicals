@@ -366,7 +366,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .cta-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
 
 /* ===== FOOTER ===== */
-.footer { background: var(--dark); padding: 64px 0 0; }
+.footer { background: #0A72D8; padding: 64px 0 0; }
 .footer-grid {
   display: grid; grid-template-columns: 2fr 1fr 1fr 2fr; gap: 40px; padding-bottom: 48px;
 }
