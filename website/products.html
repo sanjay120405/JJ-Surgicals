@@ -50,6 +50,51 @@
       .cat-filter-bar { display: flex; }
       .products-layout { padding-top: 0; }
     }
+
+    /* ===== LIGHTBOX ===== */
+    .lb-overlay {
+      display: none; position: fixed; inset: 0; z-index: 9999;
+      background: rgba(0,0,0,0.88); align-items: center; justify-content: center;
+    }
+    .lb-overlay.open { display: flex; }
+    .lb-box {
+      position: relative; background: #fff;
+      border-radius: 12px; overflow: hidden;
+      max-width: min(88vw, 700px); max-height: 92vh;
+      width: 100%; display: flex; flex-direction: column;
+      box-shadow: 0 24px 80px rgba(0,0,0,0.5);
+    }
+    .lb-img-wrap {
+      flex: 1; display: flex; align-items: center; justify-content: center;
+      background: #f8f8f8; min-height: 0; padding: 24px;
+    }
+    .lb-img-wrap img {
+      max-width: 100%; max-height: 60vh;
+      object-fit: contain; display: block;
+    }
+    .lb-footer {
+      padding: 14px 20px; border-top: 1px solid #eee;
+      display: flex; align-items: center; gap: 12px; background: #fff; flex-shrink: 0;
+    }
+    .lb-name { font-size: 0.95rem; font-weight: 700; color: #111; flex: 1; line-height: 1.4; }
+    .lb-counter { font-size: 0.8rem; color: #888; white-space: nowrap; }
+    .lb-nav {
+      background: none; border: 1.5px solid #ddd; border-radius: 8px;
+      width: 36px; height: 36px; cursor: pointer; font-size: 1rem; color: #333;
+      display: flex; align-items: center; justify-content: center;
+      transition: all 0.15s; flex-shrink: 0;
+    }
+    .lb-nav:hover { background: var(--primary); border-color: var(--primary); color: #fff; }
+    .lb-nav:disabled { opacity: 0.3; pointer-events: none; }
+    .lb-close {
+      position: absolute; top: 10px; right: 10px;
+      background: rgba(0,0,0,0.55); border: none; border-radius: 50%;
+      width: 34px; height: 34px; cursor: pointer; color: #fff;
+      font-size: 1.1rem; display: flex; align-items: center; justify-content: center;
+      transition: background 0.15s; z-index: 1;
+    }
+    .lb-close:hover { background: rgba(0,0,0,0.8); }
+    .product-img { cursor: pointer; }
   </style>
 </head>
 <body class="page-load">
@@ -1156,6 +1201,22 @@
     </div>
   </footer>
 
+  <!-- LIGHTBOX -->
+  <div class="lb-overlay" id="lbOverlay" role="dialog" aria-modal="true">
+    <div class="lb-box" id="lbBox">
+      <button class="lb-close" id="lbClose" aria-label="Close"><i class="fas fa-times"></i></button>
+      <div class="lb-img-wrap">
+        <img id="lbImg" src="" alt="">
+      </div>
+      <div class="lb-footer">
+        <button class="lb-nav" id="lbPrev" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
+        <span class="lb-name" id="lbName"></span>
+        <span class="lb-counter" id="lbCounter"></span>
+        <button class="lb-nav" id="lbNext" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
+      </div>
+    </div>
+  </div>
+
   <button class="back-to-top" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
   <script src="script.js"></script>
   <script>
@@ -1177,6 +1238,57 @@
       });
     }
     window.addEventListener('scroll', updateActivePill, { passive: true });
+  </script>
+  <script>
+    // Lightbox
+    (function() {
+      const cards = Array.from(document.querySelectorAll('.product-card'));
+      let currentIdx = 0;
+
+      const overlay = document.getElementById('lbOverlay');
+      const lbImg   = document.getElementById('lbImg');
+      const lbName  = document.getElementById('lbName');
+      const lbCount = document.getElementById('lbCounter');
+      const lbPrev  = document.getElementById('lbPrev');
+      const lbNext  = document.getElementById('lbNext');
+
+      function open(idx) {
+        currentIdx = idx;
+        const card = cards[idx];
+        const img  = card.querySelector('.product-img img');
+        const name = card.querySelector('.product-info h3');
+        lbImg.src  = img ? img.src : '';
+        lbImg.alt  = name ? name.textContent : '';
+        lbName.textContent  = name ? name.textContent : '';
+        lbCount.textContent = 'Image ' + (idx + 1) + ' of ' + cards.length;
+        lbPrev.disabled = idx === 0;
+        lbNext.disabled = idx === cards.length - 1;
+        overlay.classList.add('open');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function close() {
+        overlay.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+
+      cards.forEach(function(card, i) {
+        card.querySelector('.product-img').addEventListener('click', function() { open(i); });
+      });
+
+      document.getElementById('lbClose').addEventListener('click', close);
+      lbPrev.addEventListener('click', function() { if (currentIdx > 0) open(currentIdx - 1); });
+      lbNext.addEventListener('click', function() { if (currentIdx < cards.length - 1) open(currentIdx + 1); });
+
+      overlay.addEventListener('click', function(e) { if (e.target === overlay) close(); });
+
+      document.addEventListener('keydown', function(e) {
+        if (!overlay.classList.contains('open')) return;
+        if (e.key === 'Escape') close();
+        if (e.key === 'ArrowLeft' && currentIdx > 0) open(currentIdx - 1);
+        if (e.key === 'ArrowRight' && currentIdx < cards.length - 1) open(currentIdx + 1);
+      });
+    })();
   </script>
 </body>
 </html>
