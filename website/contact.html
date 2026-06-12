@@ -12,7 +12,8 @@
   <link rel="icon" type="image/jpeg" href="images/image1.jpeg">
   <style>
     /* Quick contact cards */
-    .quick-contact-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+    .quick-contact-grid { display:flex; gap:20px; justify-content:center; flex-wrap:wrap; }
+    .quick-contact-card { flex:0 1 320px; }
     .quick-contact-card {
       background:var(--white); border-radius:var(--radius-lg); border:1px solid var(--border);
       padding:28px 20px; text-align:center; transition:var(--transition);
