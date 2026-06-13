@@ -357,7 +357,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 
 /* ===== CTA SECTION ===== */
 .cta-section {
-  background: linear-gradient(135deg, var(--red) 0%, #c0151b 100%);
+  background: linear-gradient(135deg, #9A2F35 0%, #7a2229 100%);
   padding: 70px 0;
 }
 .cta-content { text-align: center; }
@@ -366,7 +366,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .cta-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
 
 /* ===== FOOTER ===== */
-.footer { background: #0A72D8; padding: 64px 0 0; }
+.footer { background: #76B2C9; padding: 64px 0 0; }
 .footer-grid {
   display: grid; grid-template-columns: 2fr 1fr 1fr 2fr; gap: 40px; padding-bottom: 48px;
 }
