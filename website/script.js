@@ -76,13 +76,26 @@ const sidebarLinks = document.querySelectorAll('.sidebar-link');
 const categories   = document.querySelectorAll('.product-category');
 
 if (sidebarLinks.length && categories.length) {
+  const sidebar = document.querySelector('.products-sidebar');
+
+  function setActiveLink(id) {
+    sidebarLinks.forEach(link => {
+      const isActive = link.getAttribute('href') === '#' + id;
+      link.classList.toggle('active', isActive);
+      if (isActive && sidebar) {
+        // Scroll sidebar so active link is centered in view
+        const linkTop = link.offsetTop;
+        const sidebarH = sidebar.clientHeight;
+        const linkH = link.clientHeight;
+        sidebar.scrollTo({ top: linkTop - sidebarH / 2 + linkH / 2, behavior: 'smooth' });
+      }
+    });
+  }
+
   const catObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        const id = entry.target.id;
-        sidebarLinks.forEach(link => {
-          link.classList.toggle('active', link.getAttribute('href') === '#' + id);
-        });
+        setActiveLink(entry.target.id);
       }
     });
   }, { threshold: 0.3, rootMargin: '-80px 0px -60% 0px' });
