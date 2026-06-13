@@ -385,7 +385,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 
 /* ===== CTA SECTION ===== */
 .cta-section {
-  background: linear-gradient(135deg, #4A90D9 0%, #2E6DB4 100%);
+  background: linear-gradient(135deg, #E06060 0%, #C04040 100%);
   padding: 70px 0;
 }
 .cta-content { text-align: center; }
@@ -394,7 +394,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .cta-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
 
 /* ===== FOOTER ===== */
-.footer { background: #F2F7FF; padding: 64px 0 0; border-top: 1px solid var(--border); }
+.footer { background: #D0E6F7; padding: 64px 0 0; border-top: 1px solid #B8D4EC; }
 .footer-grid {
   display: grid; grid-template-columns: 2fr 1fr 1fr 2fr; gap: 40px; padding-bottom: 48px;
 }
@@ -431,7 +431,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .footer-bottom {
   border-top: 1px solid var(--border);
   padding: 20px 0; text-align: center;
-  background: #E8F0FC;
+  background: #B8D4EC;
 }
 .footer-bottom p { color: var(--gray); font-size: 0.82rem; }
 
