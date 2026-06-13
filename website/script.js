@@ -73,12 +73,11 @@ if (statsSection) {
 
 /* ===== SIDEBAR ACTIVE STATE (Products Page) ===== */
 const sidebarLinks = document.querySelectorAll('.sidebar-link');
-const categories   = document.querySelectorAll('.product-category');
 
-if (sidebarLinks.length && categories.length) {
+if (sidebarLinks.length) {
   const sidebar = document.querySelector('.products-sidebar');
-  let scrollLocked = false;
-  let lockTimer = null;
+  const catIds  = Array.from(sidebarLinks).map(l => l.getAttribute('href').replace('#', ''));
+  let locked = false;
 
   function setActiveLink(id) {
     sidebarLinks.forEach(link => {
@@ -93,29 +92,31 @@ if (sidebarLinks.length && categories.length) {
     });
   }
 
-  const catObserver = new IntersectionObserver((entries) => {
-    if (scrollLocked) return;
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        setActiveLink(entry.target.id);
-      }
+  function updateSidebarActive() {
+    if (locked) return;
+    let current = catIds[0];
+    catIds.forEach(id => {
+      const el = document.getElementById(id);
+      if (el && window.scrollY >= el.offsetTop - 160) current = id;
     });
-  }, { threshold: 0.3, rootMargin: '-80px 0px -60% 0px' });
+    setActiveLink(current);
+  }
 
-  categories.forEach(cat => catObserver.observe(cat));
+  window.addEventListener('scroll', updateSidebarActive, { passive: true });
+  updateSidebarActive();
 
   sidebarLinks.forEach(link => {
     link.addEventListener('click', (e) => {
       e.preventDefault();
-      const target = document.querySelector(link.getAttribute('href'));
+      const id     = link.getAttribute('href').replace('#', '');
+      const target = document.getElementById(id);
       if (target) {
-        // Lock observer during scroll so clicked item stays active
-        scrollLocked = true;
-        clearTimeout(lockTimer);
-        setActiveLink(target.id);
+        locked = true;
+        setActiveLink(id);
         const top = target.getBoundingClientRect().top + window.scrollY - 100;
         window.scrollTo({ top, behavior: 'smooth' });
-        lockTimer = setTimeout(() => { scrollLocked = false; }, 900);
+        // Unlock after scroll settles
+        setTimeout(() => { locked = false; updateSidebarActive(); }, 1000);
       }
     });
   });
