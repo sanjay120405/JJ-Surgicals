@@ -1,6 +1,6 @@
 /* ===== VARIABLES ===== */
 :root {
-  --primary: #0A72D8;
+  --primary: #0B63B8;
   --primary-dark: #001f5a;
   --primary-light: #1a4db0;
   --red: #E31E24;
@@ -353,11 +353,11 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   margin: 0 auto 16px; font-size: 1.5rem; color: #FFC72C;
 }
 .trust-card h3 { color: #fff; font-size: 1rem; font-weight: 700; margin-bottom: 10px; }
-.trust-card p { color: rgba(255,255,255,0.95); font-size: 0.88rem; line-height: 1.6; }
+.trust-card p { color: #fff; font-size: 0.88rem; line-height: 1.6; }
 
 /* ===== CTA SECTION ===== */
 .cta-section {
-  background: linear-gradient(135deg, #9A2F35 0%, #7a2229 100%);
+  background: linear-gradient(135deg, #9A2F35 0%, #9A2F35 100%);
   padding: 70px 0;
 }
 .cta-content { text-align: center; }
@@ -366,7 +366,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .cta-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
 
 /* ===== FOOTER ===== */
-.footer { background: #76B2C9; padding: 64px 0 0; }
+.footer { background: #075399; padding: 64px 0 0; }
 .footer-grid {
   display: grid; grid-template-columns: 2fr 1fr 1fr 2fr; gap: 40px; padding-bottom: 48px;
 }
@@ -375,8 +375,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 .footer-logo img { width: 52px; height: 52px; border-radius: 50%; object-fit: cover; }
 .footer-name { display: block; color: var(--white); font-size: 1rem; font-weight: 800; }
-.footer-tagline { display: block; color: rgba(255,255,255,0.85); font-size: 0.72rem; }
-.footer-brand p { color: rgba(255,255,255,0.9); font-size: 0.88rem; line-height: 1.7; margin-bottom: 8px; }
+.footer-tagline { display: block; color: #fff; font-size: 0.72rem; }
+.footer-brand p { color: #fff; font-size: 0.88rem; line-height: 1.7; margin-bottom: 8px; }
 .footer-motto { color: #FFC72C !important; font-style: italic; font-weight: 600 !important; }
 
 .footer-links h4, .footer-products h4, .footer-contact h4 {
@@ -386,7 +386,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 .footer-links ul, .footer-products ul { display: flex; flex-direction: column; gap: 10px; }
 .footer-links a, .footer-products a {
-  color: rgba(255,255,255,0.9); font-size: 0.85rem; transition: var(--transition);
+  color: #fff; font-size: 0.85rem; transition: var(--transition);
 }
 .footer-links a:hover, .footer-products a:hover { color: var(--white); padding-left: 4px; }
 
@@ -395,7 +395,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 .footer-contact-item i { color: #FFC72C; margin-top: 3px; flex-shrink: 0; font-size: 0.9rem; }
 .footer-contact-item span, .footer-contact-item a {
-  color: rgba(255,255,255,0.95); font-size: 0.85rem; line-height: 1.5;
+  color: #fff; font-size: 0.85rem; line-height: 1.5;
   transition: var(--transition);
 }
 .footer-contact-item a:hover { color: var(--white); }
@@ -404,7 +404,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   border-top: 1px solid rgba(255,255,255,0.2);
   padding: 20px 0; text-align: center;
 }
-.footer-bottom p { color: rgba(255,255,255,0.85); font-size: 0.82rem; }
+.footer-bottom p { color: #fff; font-size: 0.82rem; }
 
 /* ===== PRODUCTS PAGE ===== */
 .page-hero {
