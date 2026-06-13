@@ -166,7 +166,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   display: flex; align-items: center; overflow: hidden;
 }
 .hero-layout {
-  display: grid; grid-template-columns: 1fr 1fr;
+  display: grid; grid-template-columns: 1fr 1.15fr;
   gap: 48px; align-items: center;
   max-width: 1200px; margin: 0 auto; padding: 60px 24px;
   width: 100%;
@@ -196,14 +196,12 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 .hero-img-wrap {
   position: relative; z-index: 1;
-  background: var(--lighter); border-radius: 20px;
-  border: 1px solid var(--border);
-  overflow: hidden; padding: 20px;
-  box-shadow: 0 12px 60px rgba(0,48,135,0.12);
+  border-radius: 20px;
+  overflow: hidden;
 }
 .hero-img-wrap img {
   width: 100%; height: auto; display: block;
-  border-radius: 12px; object-fit: cover;
+  border-radius: 20px; object-fit: cover;
 }
 
 /* Text side */
