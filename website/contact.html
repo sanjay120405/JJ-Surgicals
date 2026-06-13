@@ -22,10 +22,14 @@
     .qc-icon {
       width:56px; height:56px; border-radius:50%; margin:0 auto 14px;
       display:flex; align-items:center; justify-content:center; font-size:1.3rem;
+      transition:background 0.3s ease, color 0.3s ease;
     }
     .qc-icon.blue { background:var(--light); color:var(--primary); }
     .qc-icon.red { background:#fff0f0; color:var(--red); }
     .qc-icon.gold { background:#fffbeb; color:#d97706; }
+    .quick-contact-card:hover .qc-icon.blue { background:var(--primary); color:#fff; animation:iconPop 0.45s ease forwards, iconGlow 0.6s ease 0.1s; }
+    .quick-contact-card:hover .qc-icon.red { background:var(--red); color:#fff; animation:iconPop 0.45s ease forwards, iconGlowRed 0.6s ease 0.1s; }
+    .quick-contact-card:hover .qc-icon.gold { background:#d97706; color:#fff; animation:iconPop 0.45s ease forwards, iconGlowGold 0.6s ease 0.1s; }
     .quick-contact-card h3 { font-size:1rem; font-weight:700; color:var(--dark); margin-bottom:5px; }
     .quick-contact-card p  { font-size:0.85rem; color:var(--gray); margin-bottom:10px; }
     .quick-contact-card a  { color:var(--primary); font-weight:600; font-size:0.92rem; }
@@ -57,7 +61,9 @@
       width:38px; height:38px; min-width:38px; border-radius:10px;
       background:var(--light); color:var(--primary);
       display:flex; align-items:center; justify-content:center; font-size:0.88rem;
+      transition:background 0.3s ease, color 0.3s ease;
     }
+    .contact-detail-row:hover .cd-icon { background:var(--primary); color:#fff; animation:iconPop 0.45s ease forwards, iconGlow 0.6s ease 0.1s; }
     .cd-text h4 { font-size:0.73rem; font-weight:700; color:var(--gray); text-transform:uppercase; letter-spacing:.06em; margin-bottom:3px; }
     .cd-text p, .cd-text a { font-size:0.9rem; color:var(--dark); line-height:1.55; }
     .cd-text a:hover { color:var(--primary); }

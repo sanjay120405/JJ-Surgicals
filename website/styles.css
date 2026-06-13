@@ -332,6 +332,29 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   padding: 0 16px;
 }
 
+/* ===== ICON ANIMATIONS ===== */
+@keyframes iconPop {
+  0%   { transform: scale(1) rotate(0deg); }
+  35%  { transform: scale(1.22) rotate(-10deg); }
+  65%  { transform: scale(0.94) rotate(5deg); }
+  100% { transform: scale(1.08) rotate(0deg); }
+}
+@keyframes iconGlow {
+  0%   { box-shadow: 0 0 0 0 rgba(11,99,184,0.45); }
+  70%  { box-shadow: 0 0 0 10px rgba(11,99,184,0); }
+  100% { box-shadow: 0 0 0 0 rgba(11,99,184,0); }
+}
+@keyframes iconGlowRed {
+  0%   { box-shadow: 0 0 0 0 rgba(227,30,36,0.45); }
+  70%  { box-shadow: 0 0 0 10px rgba(227,30,36,0); }
+  100% { box-shadow: 0 0 0 0 rgba(227,30,36,0); }
+}
+@keyframes iconGlowGold {
+  0%   { box-shadow: 0 0 0 0 rgba(217,119,6,0.45); }
+  70%  { box-shadow: 0 0 0 10px rgba(217,119,6,0); }
+  100% { box-shadow: 0 0 0 0 rgba(217,119,6,0); }
+}
+
 /* ===== TRUST SECTION ===== */
 .trust { background: var(--white); }
 .trust .section-tag { background: rgba(0,48,135,0.08); color: var(--primary); }
@@ -351,6 +374,13 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   background: rgba(0,48,135,0.08); border: 2px solid rgba(0,48,135,0.15);
   display: flex; align-items: center; justify-content: center;
   margin: 0 auto 16px; font-size: 1.5rem; color: var(--primary);
+  transition: background 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+.trust-card:hover .trust-icon {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #fff;
+  animation: iconPop 0.45s ease forwards, iconGlow 0.6s ease 0.1s;
 }
 .trust-card h3 { color: var(--dark); font-size: 1rem; font-weight: 700; margin-bottom: 10px; }
 .trust-card p { color: var(--gray); font-size: 0.88rem; line-height: 1.6; }
