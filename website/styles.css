@@ -589,11 +589,32 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .lab-card {
   background: var(--white); border-radius: var(--radius);
   border: 1px solid var(--border); padding: 28px 24px;
-  transition: var(--transition);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  position: relative; overflow: hidden;
 }
-.lab-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); border-color: var(--primary); }
-.lab-icon { font-size: 2rem; color: var(--primary); margin-bottom: 14px; }
-.lab-card h3 { font-size: 1rem; font-weight: 700; color: var(--dark); margin-bottom: 10px; }
+.lab-card::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(11,99,184,0.04) 0%, rgba(11,99,184,0) 60%);
+  opacity: 0; transition: opacity 0.3s ease;
+}
+.lab-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); border-color: var(--primary); }
+.lab-card:hover::before { opacity: 1; }
+.lab-icon {
+  width: 56px; height: 56px; border-radius: 14px;
+  background: var(--light); border: 2px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.5rem; color: var(--primary);
+  margin-bottom: 16px;
+  transition: background 0.3s ease, border-color 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+.lab-card:hover .lab-icon {
+  background: var(--primary); border-color: var(--primary); color: #fff;
+  transform: rotate(-8deg) scale(1.12);
+  box-shadow: 0 6px 20px rgba(11,99,184,0.3);
+}
+.lab-card h3 { font-size: 1rem; font-weight: 700; color: var(--dark); margin-bottom: 10px; transition: color 0.3s ease; }
+.lab-card:hover h3 { color: var(--primary); }
 .lab-card p { font-size: 0.88rem; color: var(--gray); line-height: 1.6; }
 
 /* Mission/Vision */
@@ -877,7 +898,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   position: relative;
 }
 .fab-btn:hover { transform: translateY(-3px) scale(1.08); box-shadow: 0 8px 24px rgba(0,0,0,0.32); }
-.fab-btn.fab-whatsapp { background: #25D366; font-size: 1.7rem; }
+.fab-btn.fab-whatsapp { background: #25D366; font-size: 1.9rem; }
 .fab-btn.fab-call { background: var(--primary); }
 
 /* Tooltip labels */
