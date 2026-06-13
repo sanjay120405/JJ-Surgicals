@@ -77,13 +77,14 @@ const categories   = document.querySelectorAll('.product-category');
 
 if (sidebarLinks.length && categories.length) {
   const sidebar = document.querySelector('.products-sidebar');
+  let scrollLocked = false;
+  let lockTimer = null;
 
   function setActiveLink(id) {
     sidebarLinks.forEach(link => {
       const isActive = link.getAttribute('href') === '#' + id;
       link.classList.toggle('active', isActive);
       if (isActive && sidebar) {
-        // Scroll sidebar so active link is centered in view
         const linkTop = link.offsetTop;
         const sidebarH = sidebar.clientHeight;
         const linkH = link.clientHeight;
@@ -93,6 +94,7 @@ if (sidebarLinks.length && categories.length) {
   }
 
   const catObserver = new IntersectionObserver((entries) => {
+    if (scrollLocked) return;
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         setActiveLink(entry.target.id);
@@ -107,8 +109,13 @@ if (sidebarLinks.length && categories.length) {
       e.preventDefault();
       const target = document.querySelector(link.getAttribute('href'));
       if (target) {
+        // Lock observer during scroll so clicked item stays active
+        scrollLocked = true;
+        clearTimeout(lockTimer);
+        setActiveLink(target.id);
         const top = target.getBoundingClientRect().top + window.scrollY - 100;
         window.scrollTo({ top, behavior: 'smooth' });
+        lockTimer = setTimeout(() => { scrollLocked = false; }, 900);
       }
     });
   });
