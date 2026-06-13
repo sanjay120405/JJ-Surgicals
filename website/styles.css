@@ -403,8 +403,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 .footer-logo img { width: 52px; height: 52px; border-radius: 50%; object-fit: cover; }
 .footer-name { display: block; color: #fff; font-size: 1rem; font-weight: 800; }
-.footer-tagline { display: block; color: rgba(255,255,255,0.75); font-size: 0.72rem; }
-.footer-brand p { color: rgba(255,255,255,0.85); font-size: 0.88rem; line-height: 1.7; margin-bottom: 8px; }
+.footer-tagline { display: block; color: #fff; font-size: 0.72rem; }
+.footer-brand p { color: #fff; font-size: 0.88rem; line-height: 1.7; margin-bottom: 8px; }
 .footer-motto { color: #FFD87A !important; font-style: italic; font-weight: 600 !important; }
 
 .footer-links h4, .footer-products h4, .footer-contact h4 {
@@ -414,7 +414,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 .footer-links ul, .footer-products ul { display: flex; flex-direction: column; gap: 10px; }
 .footer-links a, .footer-products a {
-  color: rgba(255,255,255,0.8); font-size: 0.85rem; transition: var(--transition);
+  color: #fff; font-size: 0.85rem; transition: var(--transition);
 }
 .footer-links a:hover, .footer-products a:hover { color: #fff; padding-left: 4px; }
 
@@ -423,7 +423,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 .footer-contact-item i { color: #FFD87A; margin-top: 3px; flex-shrink: 0; font-size: 0.9rem; }
 .footer-contact-item span, .footer-contact-item a {
-  color: rgba(255,255,255,0.85); font-size: 0.85rem; line-height: 1.5;
+  color: #fff; font-size: 0.85rem; line-height: 1.5;
   transition: var(--transition);
 }
 .footer-contact-item a:hover { color: #fff; }
@@ -433,7 +433,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   padding: 20px 0; text-align: center;
   background: rgba(0,0,0,0.12);
 }
-.footer-bottom p { color: rgba(255,255,255,0.8); font-size: 0.82rem; }
+.footer-bottom p { color: #fff; font-size: 0.82rem; }
 
 /* ===== PRODUCTS PAGE ===== */
 .page-hero {
