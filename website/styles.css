@@ -718,10 +718,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .lab-card-cta {
   display: inline-flex; align-items: center; gap: 6px;
   margin-top: 14px; font-size: 0.8rem; font-weight: 700;
-  color: var(--primary); opacity: 0; transform: translateY(4px);
-  transition: opacity 0.25s ease, transform 0.25s ease;
+  color: var(--primary);
 }
-.lab-card:hover .lab-card-cta { opacity: 1; transform: translateY(0); }
 
 /* ===== LAB MODAL ===== */
 .lab-modal-overlay {
