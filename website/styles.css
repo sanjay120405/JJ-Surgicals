@@ -236,32 +236,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   border-radius: 20px; object-fit: cover;
 }
 
-/* Traveling border light — sweeps clockwise around the image */
-.hero-img-card::after {
-  content: '';
-  position: absolute;
-  inset: -5px;
-  border-radius: 26px;
-  background: conic-gradient(
-    from 0deg at 50% 50%,
-    transparent        0deg,
-    rgba(11,99,184,0.12) 20deg,
-    rgba(11,99,184,0.55) 45deg,
-    rgba(0,180,255,0.90) 65deg,
-    rgba(11,99,184,0.55) 85deg,
-    rgba(11,99,184,0.12) 110deg,
-    transparent        150deg,
-    transparent        360deg
-  );
-  animation: travelBorder 3.5s linear infinite;
-  z-index: 0;
-  pointer-events: none;
-}
-
-@keyframes travelBorder {
-  from { transform: rotate(0deg); }
-  to   { transform: rotate(360deg); }
-}
 
 /* Text side */
 .hero-text { padding-right: 16px; }
