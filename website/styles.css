@@ -150,9 +150,10 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   position: relative;
 }
 .nav-tagline {
-  position: absolute; left: 50%; transform: translateX(-50%);
+  position: absolute; left: 38%; top: calc(50% - 10px);
+  transform: translate(-50%, -50%);
   font-size: 0.95rem; color: var(--red); pointer-events: none;
-  white-space: nowrap;
+  white-space: nowrap; font-family: 'Segoe Script', cursive;
 }
 @media (max-width: 768px) { .nav-tagline { display: none; } }
 .nav-logo {
@@ -538,7 +539,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   background: rgba(0,0,0,0.12);
 }
 .footer-bottom p { color: #fff; font-size: 0.82rem; }
-.footer-thankyou { color: #FFD87A !important; font-size: 0.78rem; letter-spacing: 1.5px; margin-top: 8px; }
+.footer-thankyou { color: #FFD87A !important; font-size: 1rem; letter-spacing: 1.5px; font-family: 'Segoe Script', cursive; font-weight: 700; text-align: center; padding: 14px 0 10px; }
+.footer-thankyou-wrap { background: rgba(0,0,0,0.10); border-top: 1px solid rgba(255,255,255,0.15); }
 
 /* ===== PRODUCTS PAGE ===== */
 .page-hero {
