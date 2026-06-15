@@ -236,25 +236,31 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   border-radius: 20px; object-fit: cover;
 }
 
-/* Glowing border pulse */
+/* Traveling border light — sweeps clockwise around the image */
 .hero-img-card::after {
   content: '';
   position: absolute;
-  inset: -4px;
-  border-radius: 24px;
-  background: linear-gradient(135deg, rgba(11,99,184,0.35) 0%, rgba(0,150,200,0.25) 50%, rgba(11,99,184,0.35) 100%);
+  inset: -5px;
+  border-radius: 26px;
+  background: conic-gradient(
+    from 0deg at 50% 50%,
+    transparent        0deg,
+    rgba(11,99,184,0.12) 20deg,
+    rgba(11,99,184,0.55) 45deg,
+    rgba(0,180,255,0.90) 65deg,
+    rgba(11,99,184,0.55) 85deg,
+    rgba(11,99,184,0.12) 110deg,
+    transparent        150deg,
+    transparent        360deg
+  );
+  animation: travelBorder 3.5s linear infinite;
   z-index: 0;
-  animation: borderGlow 3s ease-in-out infinite;
   pointer-events: none;
 }
 
-@keyframes borderGlow {
-  0%   { opacity: 0.4; box-shadow: 0 0 8px rgba(11,99,184,0.32); }
-  20%  { opacity: 1;   box-shadow: 0 0 32px rgba(11,99,184,0.76), 0 0 56px rgba(11,99,184,0.36); }
-  40%  { opacity: 0.6; box-shadow: 0 0 14px rgba(11,99,184,0.40), 0 0 28px rgba(11,99,184,0.20); }
-  60%  { opacity: 1;   box-shadow: 0 0 28px rgba(11,99,184,0.72), 0 0 50px rgba(11,99,184,0.32); }
-  80%  { opacity: 0.5; box-shadow: 0 0 10px rgba(11,99,184,0.34); }
-  100% { opacity: 0.4; box-shadow: 0 0 8px rgba(11,99,184,0.32); }
+@keyframes travelBorder {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
 }
 
 /* Text side */
