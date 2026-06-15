@@ -41,6 +41,10 @@
     .product-search-clear:hover { color: var(--dark); }
     .product-search-count { color: var(--gray); font-size: 0.83rem; font-weight: 500; white-space: nowrap; }
     .product-card.search-hidden { display: none; }
+    @media (max-width: 768px) {
+      .product-search-wrap { justify-content: center; }
+      .product-search-box { width: 100%; max-width: 360px; }
+    }
 
     /* Hide old select */
     .mobile-cat-select { display: none !important; }
