@@ -14,35 +14,33 @@
     .breadcrumb span { color: #fb923c; font-weight: 700; }
 
     /* ===== PRODUCT SEARCH ===== */
-    .product-search-wrap { margin-top: 28px; display: flex; flex-direction: column; align-items: center; gap: 10px; }
+    .product-search-wrap {
+      display: flex; align-items: center; justify-content: flex-end; gap: 12px;
+      margin-bottom: 24px; flex-wrap: wrap;
+    }
     .product-search-box {
-      position: relative; width: 100%; max-width: 540px;
-      display: flex; align-items: center;
+      position: relative; display: flex; align-items: center; width: 300px;
     }
     .product-search-icon {
-      position: absolute; left: 18px; color: rgba(255,255,255,0.7); font-size: 1rem; pointer-events: none;
+      position: absolute; left: 14px; color: var(--gray); font-size: 0.9rem; pointer-events: none;
     }
     .product-search-input {
-      width: 100%; padding: 14px 50px 14px 46px;
-      border-radius: 40px; border: 2px solid rgba(255,255,255,0.35);
-      background: rgba(255,255,255,0.15); color: #fff;
-      font-size: 1rem; font-family: inherit; outline: none;
-      transition: border-color 0.25s ease, background 0.25s ease;
+      width: 100%; padding: 11px 40px 11px 40px;
+      border-radius: 30px; border: 1.5px solid var(--border);
+      background: var(--white); color: var(--dark);
+      font-size: 0.92rem; font-family: inherit; outline: none;
+      transition: border-color 0.25s ease, box-shadow 0.25s ease;
+      box-shadow: 0 2px 8px rgba(0,48,135,0.06);
     }
-    .product-search-input::placeholder { color: rgba(255,255,255,0.65); }
-    .product-search-input:focus { border-color: rgba(255,255,255,0.8); background: rgba(255,255,255,0.22); }
+    .product-search-input::placeholder { color: var(--gray-light); }
+    .product-search-input:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(11,99,184,0.12); }
     .product-search-clear {
-      position: absolute; right: 16px; background: none; border: none;
-      color: rgba(255,255,255,0.75); font-size: 0.95rem; cursor: pointer; padding: 4px;
+      position: absolute; right: 13px; background: none; border: none;
+      color: var(--gray); font-size: 0.88rem; cursor: pointer; padding: 4px;
     }
-    .product-search-clear:hover { color: #fff; }
-    .product-search-count { color: rgba(255,255,255,0.8); font-size: 0.85rem; font-weight: 500; min-height: 20px; }
+    .product-search-clear:hover { color: var(--dark); }
+    .product-search-count { color: var(--gray); font-size: 0.83rem; font-weight: 500; white-space: nowrap; }
     .product-card.search-hidden { display: none; }
-    .search-no-results {
-      text-align: center; padding: 40px 20px; color: var(--gray);
-      font-size: 1rem; display: none;
-    }
-    .search-no-results i { font-size: 2rem; margin-bottom: 10px; display: block; color: var(--border); }
 
     /* Hide old select */
     .mobile-cat-select { display: none !important; }
@@ -182,14 +180,6 @@
     </div>
     <h1>Our Products</h1>
     <p>Browse our complete range of medical &amp; surgical equipment</p>
-    <div class="product-search-wrap">
-      <div class="product-search-box">
-        <i class="fas fa-search product-search-icon"></i>
-        <input type="text" id="productSearch" class="product-search-input" placeholder="Search products…" autocomplete="off">
-        <button class="product-search-clear" id="searchClear" aria-label="Clear search" style="display:none;"><i class="fas fa-times"></i></button>
-      </div>
-      <p class="product-search-count" id="searchCount"></p>
-    </div>
   </div>
 
   <!-- MOBILE CATEGORY FILTER BAR -->
@@ -237,6 +227,16 @@
 
     <!-- MAIN CONTENT -->
     <main>
+
+      <!-- SEARCH BAR -->
+      <div class="product-search-wrap">
+        <div class="product-search-box">
+          <i class="fas fa-search product-search-icon"></i>
+          <input type="text" id="productSearch" class="product-search-input" placeholder="Search products…" autocomplete="off">
+          <button class="product-search-clear" id="searchClear" aria-label="Clear search" style="display:none;"><i class="fas fa-times"></i></button>
+        </div>
+        <p class="product-search-count" id="searchCount"></p>
+      </div>
 
       <!-- ===== CATEGORY 1: NURSING BAGS ===== -->
       <div class="product-category" id="nursing-bags">
