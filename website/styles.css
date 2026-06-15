@@ -758,7 +758,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   border-radius: 18px 18px 0 0;
   background: #f5f7fa;
 }
-.lab-modal-img-wrap img { width: 100%; height: auto; display: block; object-fit: contain; }
+.lab-modal-img-wrap img { width: 100%; height: auto; display: block; object-fit: contain; transition: opacity 0.3s ease; }
 .lab-modal-body { padding: 24px 28px 28px; }
 .lab-modal-body h3 {
   font-size: 1.25rem; font-weight: 800; color: var(--primary);
