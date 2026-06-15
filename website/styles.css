@@ -150,7 +150,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   position: relative;
 }
 .nav-tagline {
-  position: absolute; left: 48%; top: calc(50% - 10px);
+  position: absolute; left: calc(48% - 5px); top: calc(50% - 10px);
   transform: translate(-50%, -50%);
   font-size: 0.95rem; color: var(--red); pointer-events: none;
   white-space: nowrap; font-family: 'Segoe Script', cursive;
