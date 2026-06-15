@@ -423,7 +423,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   border-color: var(--primary);
 }
 .brand-card img {
-  max-height: 68px; max-width: 163px;
+  max-height: 95px; max-width: 228px;
   width: auto; height: auto; object-fit: contain;
   filter: grayscale(25%) opacity(0.85);
   transition: filter 0.3s ease, transform 0.3s ease;
