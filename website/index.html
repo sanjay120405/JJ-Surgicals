@@ -615,19 +615,11 @@
 
     function openModal(key) {
       var d = labData[key]; if (!d) return;
+      modalImg.src = d.img; modalImg.alt = d.title;
       modalTitle.textContent = d.title;
       modalList.innerHTML = d.items.map(function(i){ return '<li>' + i + '</li>'; }).join('');
-      modalImg.style.opacity = '0';
-      modalImg.src = '';
       overlay.classList.add('active');
       document.body.style.overflow = 'hidden';
-      var tmp = new window.Image();
-      tmp.onload = function() {
-        modalImg.src = d.img;
-        modalImg.alt = d.title;
-        modalImg.style.opacity = '1';
-      };
-      tmp.src = d.img;
     }
     function closeModal() {
       overlay.classList.remove('active');
