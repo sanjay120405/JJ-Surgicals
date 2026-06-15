@@ -1854,5 +1854,13 @@
       });
     })();
   </script>
+  <script>
+    document.querySelectorAll('.product-card').forEach(function(card, i) {
+      var num = document.createElement('span');
+      num.className = 'product-num';
+      num.textContent = 'JJ' + String(i + 1).padStart(3, '0');
+      card.appendChild(num);
+    });
+  </script>
 </body>
 </html>
