@@ -948,8 +948,21 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   transition: transform 0.25s ease, box-shadow 0.25s ease;
   position: relative;
 }
-.fab-btn:hover { transform: translateY(-3px) scale(1.08); box-shadow: 0 8px 24px rgba(0,0,0,0.32); }
-.fab-btn.fab-whatsapp { background: #25D366; font-size: 1.9rem; }
+.fab-btn:hover { transform: translateY(-3px) scale(1.1); box-shadow: 0 8px 24px rgba(0,0,0,0.32); }
+.fab-btn.fab-whatsapp {
+  background: #25D366; font-size: 1.9rem;
+  box-shadow: 0 4px 16px rgba(37,211,102,0.45);
+  animation: wa-pulse 2.5s infinite;
+}
+.fab-btn.fab-whatsapp:hover {
+  box-shadow: 0 6px 22px rgba(37,211,102,0.6);
+  animation: none;
+}
+@keyframes wa-pulse {
+  0%   { box-shadow: 0 4px 20px rgba(37,211,102,0.45); }
+  50%  { box-shadow: 0 4px 28px rgba(37,211,102,0.7), 0 0 0 10px rgba(37,211,102,0.1); }
+  100% { box-shadow: 0 4px 20px rgba(37,211,102,0.45); }
+}
 .fab-btn.fab-call { background: var(--primary); }
 
 /* Tooltip labels */
