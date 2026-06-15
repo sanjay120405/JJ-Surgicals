@@ -242,7 +242,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   display: flex; gap: 28px; padding-top: 28px;
   border-top: 1px solid var(--border);
 }
-.hero-mini-stat {}
+
 .hero-mini-stat .num {
   font-size: 1.6rem; font-weight: 900; color: var(--primary); line-height: 1;
 }
@@ -382,6 +382,56 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 .trust-card h3 { color: var(--dark); font-size: 1rem; font-weight: 700; margin-bottom: 10px; }
 .trust-card p { color: var(--gray); font-size: 0.88rem; line-height: 1.6; }
+
+/* ===== BRANDS SCROLL ===== */
+.brands-section { background: var(--lighter); overflow: hidden; }
+.brands-track-wrap {
+  position: relative; overflow: hidden; margin-top: 20px;
+}
+.brands-track-wrap::before,
+.brands-track-wrap::after {
+  content: ''; position: absolute; top: 0; bottom: 0; width: 100px; z-index: 2; pointer-events: none;
+}
+.brands-track-wrap::before { left: 0; background: linear-gradient(to right, var(--lighter), transparent); }
+.brands-track-wrap::after  { right: 0; background: linear-gradient(to left, var(--lighter), transparent); }
+
+.brands-track {
+  display: flex; gap: 20px; padding: 12px 0;
+  width: max-content;
+  animation: brandScroll 35s linear infinite;
+}
+.brands-track:hover { animation-play-state: paused; }
+
+@keyframes brandScroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.brand-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px 28px;
+  display: flex; align-items: center; justify-content: center;
+  min-width: 160px; height: 90px; flex-shrink: 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  cursor: default;
+}
+.brand-card:hover {
+  transform: translateY(-5px) scale(1.07);
+  box-shadow: 0 10px 30px rgba(11,99,184,0.18);
+  border-color: var(--primary);
+}
+.brand-card img {
+  max-height: 54px; max-width: 130px;
+  width: auto; height: auto; object-fit: contain;
+  filter: grayscale(25%) opacity(0.85);
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+.brand-card:hover img {
+  filter: grayscale(0%) opacity(1);
+  transform: scale(1.05);
+}
 
 /* ===== CTA SECTION ===== */
 .cta-section {
