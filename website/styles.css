@@ -432,6 +432,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   filter: grayscale(0%) opacity(1);
   transform: scale(1.05);
 }
+.brand-card-lg img { max-height: 124px; max-width: 296px; }
 
 /* ===== CTA SECTION ===== */
 .cta-section {
