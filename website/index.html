@@ -222,35 +222,41 @@
         <p class="section-desc">We supply complete setups for all nursing college laboratory requirements as per INC guidelines</p>
       </div>
       <div class="lab-grid">
-        <div class="lab-card fade-in delay-1">
+        <div class="lab-card fade-in delay-1" data-lab="anatomy" role="button" tabindex="0" aria-label="View Anatomy & Physiology Lab details">
           <div class="lab-icon"><i class="fas fa-bone"></i></div>
           <h3>Anatomy Lab</h3>
           <p>Complete anatomical models, skeletons, organ models, torsos, charts and educational posters for anatomy studies.</p>
+          <span class="lab-card-cta">View Details <i class="fas fa-arrow-right"></i></span>
         </div>
-        <div class="lab-card fade-in delay-2">
+        <div class="lab-card fade-in delay-2" data-lab="foundation" role="button" tabindex="0" aria-label="View Foundation Nursing Lab details">
           <div class="lab-icon"><i class="fas fa-stethoscope"></i></div>
           <h3>Foundation Nursing Lab</h3>
           <p>All fundamental nursing care equipment including community bags, pocket kits, and clinical skills trainers.</p>
+          <span class="lab-card-cta">View Details <i class="fas fa-arrow-right"></i></span>
         </div>
-        <div class="lab-card fade-in delay-3">
+        <div class="lab-card fade-in delay-3" data-lab="medical" role="button" tabindex="0" aria-label="View Medical & Surgical Nursing Lab details">
           <div class="lab-icon"><i class="fas fa-syringe"></i></div>
           <h3>Medical-Surgical Nursing Lab</h3>
           <p>Surgical instruments, SS wares, nursing manikins, and all equipment required for medical-surgical nursing training.</p>
+          <span class="lab-card-cta">View Details <i class="fas fa-arrow-right"></i></span>
         </div>
-        <div class="lab-card fade-in delay-1">
+        <div class="lab-card fade-in delay-1" data-lab="child" role="button" tabindex="0" aria-label="View Child Health Nursing Lab details">
           <div class="lab-icon"><i class="fas fa-baby"></i></div>
           <h3>Child Health Nursing Lab</h3>
           <p>Paediatric simulators, infant CPR manikins, child nursing manikins, and child health assessment tools.</p>
+          <span class="lab-card-cta">View Details <i class="fas fa-arrow-right"></i></span>
         </div>
-        <div class="lab-card fade-in delay-2">
+        <div class="lab-card fade-in delay-2" data-lab="obstetric" role="button" tabindex="0" aria-label="View Obstetric & Gynaecology Lab details">
           <div class="lab-icon"><i class="fas fa-venus"></i></div>
           <h3>Obstetric &amp; Gynaecology Lab</h3>
           <p>Advanced delivery simulators, midwifery trainers, OBG instruments, and gynaecological training models.</p>
+          <span class="lab-card-cta">View Details <i class="fas fa-arrow-right"></i></span>
         </div>
-        <div class="lab-card fade-in delay-3">
+        <div class="lab-card fade-in delay-3" data-lab="community" role="button" tabindex="0" aria-label="View Community Health Nursing Lab details">
           <div class="lab-icon"><i class="fas fa-house-medical"></i></div>
           <h3>Community Health Nursing Lab</h3>
           <p>Community nursing bags, diagnostic kits, weighing scales, and public health equipment for community nursing training.</p>
+          <span class="lab-card-cta">View Details <i class="fas fa-arrow-right"></i></span>
         </div>
       </div>
     </div>
@@ -516,11 +522,118 @@
     </div>
   </footer>
 
+  <!-- Lab Details Modal -->
+  <div id="labModal" class="lab-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="labModalTitle">
+    <div class="lab-modal">
+      <button class="lab-modal-close" id="labModalClose" aria-label="Close"><i class="fas fa-times"></i></button>
+      <div class="lab-modal-img-wrap">
+        <img id="labModalImg" src="" alt="" loading="lazy">
+      </div>
+      <div class="lab-modal-body">
+        <h3 id="labModalTitle"></h3>
+        <ul id="labModalList"></ul>
+      </div>
+    </div>
+  </div>
+
   <div class="fab-group">
     <a href="https://wa.me/918248168600" target="_blank" rel="noopener" class="fab-btn fab-whatsapp" data-tip="WhatsApp Us" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
     <a href="tel:8248168600" class="fab-btn fab-call" data-tip="Call Us" aria-label="Call"><i class="fas fa-phone"></i></a>
   </div>
   <button class="back-to-top" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
   <script src="script.js"></script>
+  <script>
+  (function(){
+    var labData = {
+      anatomy: {
+        title: "Anatomy & Physiology Lab",
+        img: "images/lab_anatomy.jpg",
+        items: [
+          "Human skeletons (articulated and disarticulated)",
+          "Anatomy dissection kits, microscopes, prepared slides",
+          "Models of human body, torso, heart, brain, lungs, digestive, urinary, reproductive systems, joints, ligaments, and teeth",
+          "Working models of heart, lungs, kidney, and joints",
+          "Charts on body systems, organs, reproductive health, endocrine glands, and first aid procedures"
+        ]
+      },
+      foundation: {
+        title: "Foundation Nursing Lab",
+        img: "images/lab_foundation.jpg",
+        items: [
+          "Basic nursing manikins and simulators (adult male/female, CPR, IV arm, injection trainers, catheterization, airway suction, chest tube, NG feeding)",
+          "Patient cots, lockers, stools, trays, bowls, trolleys, waste bins",
+          "Nursing instruments, syringes, needles, catheters, thermometers, BP apparatus, glucometer, nebulizer",
+          "Linen, rubber goods, glassware, consumables, and essential solutions for nursing procedures"
+        ]
+      },
+      medical: {
+        title: "Medical & Surgical Nursing Lab",
+        img: "images/lab_medical_surgical.jpg",
+        items: [
+          "Advanced simulators such as ICU cot, ECG simulator, airway management trainer, defibrillator trainer, central venous cannulation trainer, and hemodynamic monitoring kit",
+          "Procedure manikins for CPR, IV therapy, injections, catheterization, ostomy care, and chest tube management",
+          "Surgical instruments, oxygen therapy equipment, tracheostomy sets, nebulizers, and emergency care supplies",
+          "Syringes, needles, suturing materials, linen, consumables, and patient-care furniture"
+        ]
+      },
+      child: {
+        title: "Child Health Nursing Lab",
+        img: "images/lab_child_health.jpg",
+        items: [
+          "Pediatric and infant training manikins",
+          "Airway management, auscultation, venous access, and NG tube training simulators",
+          "Growth and development, breastfeeding, weaning, IMNCI, and pediatric CPR charts",
+          "Infant feeding equipment, weighing scales, infusion pumps, nebulizers, toys, child cots, and pediatric linen"
+        ]
+      },
+      obstetric: {
+        title: "Obstetric & Gynaecology Lab",
+        img: "images/lab_obstetric.jpg",
+        items: [
+          "Models of fetus, pelvis, placenta, uterus, fetal skull, and reproductive organs",
+          "Birthing simulator, antenatal palpation manikin, cervical dilatation model, newborn resuscitation trainer, and postpartum hemorrhage simulator",
+          "Charts on pregnancy, labor, fetal development, abnormal presentations, family planning, and newborn care",
+          "Delivery room equipment, obstetric instruments, FP counseling kits, contraceptive models, maternal and newborn consumables, PPE, and linen"
+        ]
+      },
+      community: {
+        title: "Community Health Nursing Lab",
+        img: "images/lab_community.jpg",
+        items: [
+          "Community health equipment such as weighing scales, BP apparatus, stethoscopes, and sterilizers",
+          "Health education materials including posters, flip charts, flash cards, and audiovisual aids",
+          "Community health bag containing essential nursing supplies for home visits",
+          "Midwifery kits with delivery and newborn care articles"
+        ]
+      }
+    };
+
+    var overlay = document.getElementById('labModal');
+    var modalImg = document.getElementById('labModalImg');
+    var modalTitle = document.getElementById('labModalTitle');
+    var modalList = document.getElementById('labModalList');
+
+    function openModal(key) {
+      var d = labData[key]; if (!d) return;
+      modalImg.src = d.img; modalImg.alt = d.title;
+      modalTitle.textContent = d.title;
+      modalList.innerHTML = d.items.map(function(i){ return '<li>' + i + '</li>'; }).join('');
+      overlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeModal() {
+      overlay.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    document.querySelectorAll('.lab-card[data-lab]').forEach(function(card){
+      card.addEventListener('click', function(){ openModal(card.dataset.lab); });
+      card.addEventListener('keydown', function(e){ if(e.key==='Enter'||e.key===' ') openModal(card.dataset.lab); });
+    });
+    document.getElementById('labModalClose').addEventListener('click', closeModal);
+    overlay.addEventListener('click', function(e){ if(e.target===overlay) closeModal(); });
+    document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeModal(); });
+  })();
+  </script>
 </body>
 </html>
