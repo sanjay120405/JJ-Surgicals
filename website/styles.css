@@ -147,7 +147,14 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .nav-container {
   max-width: 1200px; margin: 0 auto; padding: 0 24px;
   display: flex; align-items: center; gap: 32px; height: 82px;
+  position: relative;
 }
+.nav-tagline {
+  position: absolute; left: 50%; transform: translateX(-50%);
+  font-size: 0.95rem; color: var(--red); pointer-events: none;
+  white-space: nowrap;
+}
+@media (max-width: 768px) { .nav-tagline { display: none; } }
 .nav-logo {
   display: flex; align-items: center; gap: 12px;
   text-decoration: none; flex-shrink: 0;
@@ -531,6 +538,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   background: rgba(0,0,0,0.12);
 }
 .footer-bottom p { color: #fff; font-size: 0.82rem; }
+.footer-thankyou { color: #FFD87A !important; font-size: 0.78rem; letter-spacing: 1.5px; margin-top: 8px; }
 
 /* ===== PRODUCTS PAGE ===== */
 .page-hero {
