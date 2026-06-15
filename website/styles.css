@@ -130,11 +130,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .top-bar-item i { color: #7DB8F7; font-size: 0.75rem; }
 .top-bar-item:hover { color: #fff; }
 @media (max-width: 640px) {
-  .top-bar-left { display: flex; }
-  .top-bar-left span { font-size: 0.62rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 150px; }
-  .top-bar-inner { justify-content: space-between; gap: 8px; }
-  .top-bar-item { font-size: 0.68rem; gap: 4px; }
-  .top-bar-right .top-bar-item:last-child { display: none; }
+  .top-bar-left { display: none; }
+  .top-bar-inner { justify-content: center; }
 }
 
 /* ===== NAVBAR ===== */
