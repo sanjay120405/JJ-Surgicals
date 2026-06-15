@@ -107,7 +107,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .top-bar {
   position: fixed; top: 0; left: 0; width: 100%; z-index: 1001;
   background: #0D2B55;
-  padding: 7px 0;
+  height: 36px;
+  display: flex; align-items: center;
 }
 .top-bar-inner {
   max-width: 1200px; margin: 0 auto; padding: 0 24px;
