@@ -539,7 +539,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   background: rgba(0,0,0,0.12);
 }
 .footer-bottom p { color: #fff; font-size: 0.82rem; }
-.footer-thankyou { color: #FFD87A !important; font-size: 1rem; letter-spacing: 1.5px; font-family: 'Segoe Script', cursive; font-weight: 700; text-align: center; padding: 14px 0 10px; margin-top: -20px; }
+.footer-thankyou { color: #FFD87A !important; font-size: 1rem; letter-spacing: 1.5px; font-family: 'Segoe Script', cursive; font-weight: 700; text-align: center; padding: 14px 0 10px; margin-top: -30px; }
 
 /* ===== PRODUCTS PAGE ===== */
 .page-hero {
