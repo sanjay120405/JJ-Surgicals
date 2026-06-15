@@ -249,8 +249,12 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 
 @keyframes borderGlow {
-  0%, 100% { opacity: 0.5; box-shadow: 0 0 10px rgba(11,99,184,0.4); }
-  50%       { opacity: 1;   box-shadow: 0 0 40px rgba(11,99,184,0.95), 0 0 70px rgba(11,99,184,0.45); }
+  0%   { opacity: 0.4; box-shadow: 0 0 8px rgba(11,99,184,0.32); }
+  20%  { opacity: 1;   box-shadow: 0 0 32px rgba(11,99,184,0.76), 0 0 56px rgba(11,99,184,0.36); }
+  40%  { opacity: 0.6; box-shadow: 0 0 14px rgba(11,99,184,0.40), 0 0 28px rgba(11,99,184,0.20); }
+  60%  { opacity: 1;   box-shadow: 0 0 28px rgba(11,99,184,0.72), 0 0 50px rgba(11,99,184,0.32); }
+  80%  { opacity: 0.5; box-shadow: 0 0 10px rgba(11,99,184,0.34); }
+  100% { opacity: 0.4; box-shadow: 0 0 8px rgba(11,99,184,0.32); }
 }
 
 /* Text side */
