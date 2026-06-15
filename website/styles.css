@@ -204,10 +204,16 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 
 /* Image card side */
-.hero-img-side { position: relative; }
+.hero-img-side {
+  position: relative;
+  perspective: 1000px;
+}
 .hero-img-card {
   position: relative; border-radius: 24px;
   overflow: visible;
+  transform-style: preserve-3d;
+  animation: hero3D 9s ease-in-out infinite;
+  will-change: transform;
 }
 .hero-circle-deco {
   position: absolute;
@@ -229,11 +235,19 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   position: relative; z-index: 1;
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 20px 60px rgba(11,99,184,0.18);
+  box-shadow: 0 30px 80px rgba(11,99,184,0.30);
 }
 .hero-img-wrap img {
   width: 100%; height: auto; display: block;
   border-radius: 20px; object-fit: cover;
+}
+
+@keyframes hero3D {
+  0%   { transform: rotateX(4deg)  rotateY(-12deg) translateY(0px);   }
+  25%  { transform: rotateX(-3deg) rotateY(10deg)  translateY(-10px);  }
+  50%  { transform: rotateX(5deg)  rotateY(12deg)  translateY(0px);   }
+  75%  { transform: rotateX(-4deg) rotateY(-10deg) translateY(10px);   }
+  100% { transform: rotateX(4deg)  rotateY(-12deg) translateY(0px);   }
 }
 
 
